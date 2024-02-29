@@ -530,7 +530,8 @@ function cleanRange(text: string | null | undefined) {
   if (!text) return -1;
   const match = text.match(/(\d+(,\d+)*)/);
 
-  if (!match || !match[1]) return -1;
+  if (!match) return -1;
+  if (!match[1]) return -1;
 
   const numberWithoutSymbol = match[1].replace(/^฿/, "");
   const firstNumber = parseInt(numberWithoutSymbol.replace(/,/g, ""), 10);
