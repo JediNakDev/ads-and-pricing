@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { api } from "~/utils/api";
 
-export default function Home() {
-  const hello = api.post.hello.useQuery({ text: "from tRPC" });
+export default function Page() {
+  const pricing_true = api.pricing.true.useQuery();
 
   return (
     <>
@@ -43,7 +43,9 @@ export default function Home() {
             </Link>
           </div>
           <p className="text-2xl text-white">
-            {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+            {pricing_true.data
+              ? pricing_true.data.iPhone15ProMax
+              : "Loading tRPC query"}
           </p>
         </div>
       </main>
