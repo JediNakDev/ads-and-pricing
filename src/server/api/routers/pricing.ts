@@ -277,8 +277,6 @@ async function get_pricing_istudiobyspvi() {
     .text()
     .split(" ");
 
-  console.log(element[64]);
-
   const iPhone15ProMax = cleanNumber(element[8]);
 
   const iPhone15Pro = cleanNumber(element[36]);
