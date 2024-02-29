@@ -39,19 +39,25 @@ export const pricingRouter = createTRPCRouter({
 });
 
 async function get_pricing_true() {
+  console.log(0);
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  console.log(1);
 
   await page.goto("https://www.true.th/store/online-store/brand/apple");
+  console.log(2);
 
   const iPhone15ProMax_el = await page.waitForSelector(
     "body > div.app > div.page.shop-in-shop-page > div > div.page-container > div:nth-child(4) > div > div > section > div > a:nth-child(1) > div.content-info > div.infor_1 > div > div.wrap-price > p",
   );
+  console.log(3);
   const iPhone15ProMax_txt = await page.evaluate(
     (element) => element?.textContent,
     iPhone15ProMax_el,
   );
+  console.log(4);
   const iPhone15ProMax = cleanNumber(iPhone15ProMax_txt);
+  console.log(5);
 
   const iPhone15Pro_el = await page.waitForSelector(
     "body > div.app > div.page.shop-in-shop-page > div > div.page-container > div:nth-child(4) > div > div > section > div > a:nth-child(2) > div.content-info > div.infor_1 > div > div.wrap-price > p",
@@ -86,8 +92,10 @@ async function get_pricing_true() {
     iPhone15Plus: iPhone15Plus,
     iPhone15: iPhone15,
   };
+  console.log(6);
 
   await browser.close();
+  console.log(7);
 
   return pricing;
 }
