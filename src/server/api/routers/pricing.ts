@@ -1,4 +1,5 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "chrome-aws-lambda";
 import * as cheerio from "cheerio";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
@@ -38,9 +39,19 @@ export const pricingRouter = createTRPCRouter({
   }),
 });
 
+const LOCAL_CHROME_EXECUTABLE =
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
 async function get_pricing_true() {
   console.log(0);
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
   console.log(1);
 
