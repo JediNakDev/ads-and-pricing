@@ -112,7 +112,13 @@ async function get_pricing_true() {
 }
 
 async function get_pricing_studio7() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto("https://www.studio7thailand.com/en/p/apple-iphone-series");
@@ -170,7 +176,13 @@ async function get_pricing_studio7() {
 }
 
 async function get_pricing_bananait() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto(
@@ -226,7 +238,13 @@ async function get_pricing_bananait() {
 }
 
 async function get_pricing_csc() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto("https://www.thaimobilecenter.com/catalog/Apple.asp");
@@ -280,7 +298,13 @@ async function get_pricing_csc() {
 }
 
 async function get_pricing_istudiobyspvi() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto(
@@ -317,7 +341,13 @@ async function get_pricing_istudiobyspvi() {
 }
 
 async function get_pricing_istudiobycopperwired() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto(
@@ -385,7 +415,13 @@ async function get_pricing_istudiobycopperwired() {
 }
 
 async function get_pricing_jaymart() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto(
@@ -480,7 +516,13 @@ async function get_pricing_jaymart() {
 }
 
 async function get_pricing_tg() {
-  const browser = await puppeteer.launch();
+  const executablePath =
+    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+  const browser = await puppeteer.launch({
+    executablePath,
+    args: chromium.args,
+    headless: false,
+  });
   const page = await browser.newPage();
 
   await page.goto(
