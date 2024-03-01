@@ -46,7 +46,7 @@ async function get_pricing_true() {
   console.log(0);
   const executablePath =
     (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
-  console.log(0.5);
+  console.log(0.5, executablePath);
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
