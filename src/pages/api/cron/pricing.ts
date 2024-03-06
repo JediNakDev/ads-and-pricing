@@ -6,7 +6,8 @@ import { db } from "~/server/db";
 
 export default async function handler() {
   const pricing_true = get_pricing_true();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "true",
       iPhone15ProMax: (await pricing_true).iPhone15ProMax,
@@ -24,7 +25,8 @@ export default async function handler() {
       },
     });
   const pricing_studio7 = get_pricing_studio7();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "studio7",
       iPhone15ProMax: (await pricing_studio7).iPhone15ProMax,
@@ -42,7 +44,8 @@ export default async function handler() {
       },
     });
   const pricing_bananait = get_pricing_bananait();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "bananait",
       iPhone15ProMax: (await pricing_bananait).iPhone15ProMax,
@@ -60,7 +63,8 @@ export default async function handler() {
       },
     });
   const pricing_csc = get_pricing_csc();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "csc",
       iPhone15ProMax: (await pricing_csc).iPhone15ProMax,
@@ -78,7 +82,8 @@ export default async function handler() {
       },
     });
   const pricing_istudiobyspvi = get_pricing_istudiobyspvi();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "istudionbyspvi",
       iPhone15ProMax: (await pricing_istudiobyspvi).iPhone15ProMax,
@@ -96,7 +101,8 @@ export default async function handler() {
       },
     });
   const pricing_istudiobycopperwired = get_pricing_istudiobycopperwired();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "istudiobycopperwired",
       iPhone15ProMax: (await pricing_istudiobycopperwired).iPhone15ProMax,
@@ -114,7 +120,8 @@ export default async function handler() {
       },
     });
   const pricing_jaymart = get_pricing_jaymart();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "jaymart",
       iPhone15ProMax: (await pricing_jaymart).iPhone15ProMax,
@@ -132,7 +139,8 @@ export default async function handler() {
       },
     });
   const pricing_tg = get_pricing_tg();
-  db.insert(pricing)
+  await db
+    .insert(pricing)
     .values({
       name: "tg",
       iPhone15ProMax: (await pricing_tg).iPhone15ProMax,

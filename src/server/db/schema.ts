@@ -1,12 +1,4 @@
-import {
-  serial,
-  text,
-  integer,
-  pgTable,
-  pgTableCreator,
-} from "drizzle-orm/pg-core";
-import { sql } from "@vercel/postgres";
-import { drizzle } from "drizzle-orm/vercel-postgres";
+import { text, integer, pgTableCreator } from "drizzle-orm/pg-core";
 
 export const createTable = pgTableCreator((name) => `ads-and-pricing_${name}`);
 
