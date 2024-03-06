@@ -4,7 +4,7 @@ import Link from "next/link";
 import { api } from "~/utils/api";
 
 export default function Page() {
-  const pricing_true = api.pricing.true.useQuery();
+  const pricing_true = api.pricing.get.useQuery("true");
 
   return (
     <>

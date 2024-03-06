@@ -9,15 +9,16 @@ import {
 import { api } from "~/utils/api";
 
 export default function Page() {
-  const pricing_true = api.pricing.true.useQuery();
-  const pricing_studio7 = api.pricing.studio7.useQuery();
-  const pricing_bananait = api.pricing.bananait.useQuery();
-  const pricing_csc = api.pricing.csc.useQuery();
-  const pricing_istudiobyspvi = api.pricing.istudiobyspvi.useQuery();
-  const pricing_istudiobycopperwired =
-    api.pricing.istudiobycopperwired.useQuery();
-  const pricing_jaymart = api.pricing.jaymart.useQuery();
-  const pricing_tg = api.pricing.tg.useQuery();
+  const pricing_true = api.pricing.get.useQuery("true");
+  const pricing_studio7 = api.pricing.get.useQuery("studio7");
+  const pricing_bananait = api.pricing.get.useQuery("bananait");
+  const pricing_csc = api.pricing.get.useQuery("csc");
+  const pricing_istudiobyspvi = api.pricing.get.useQuery("istudiobyspvi");
+  const pricing_istudiobycopperwired = api.pricing.get.useQuery(
+    "istudiobycopperwired",
+  );
+  const pricing_jaymart = api.pricing.get.useQuery("jaymart");
+  const pricing_tg = api.pricing.get.useQuery("tg");
 
   return (
     <div className="flex flex-col gap-4 p-4 md:gap-8 md:p-6">
