@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer-core";
-import chromium from "chrome-aws-lambda";
+import chromium from "@sparticuz/chromium";
 import * as cheerio from "cheerio";
 import { pricing } from "~/server/db/schema";
 import { db } from "~/server/db";
@@ -165,7 +165,7 @@ const LOCAL_CHROME_EXECUTABLE =
 async function get_pricing_true() {
   console.log(0);
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   console.log(0.5, executablePath);
   const browser = await puppeteer.launch({
     executablePath,
@@ -233,7 +233,7 @@ async function get_pricing_true() {
 
 async function get_pricing_studio7() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -297,7 +297,7 @@ async function get_pricing_studio7() {
 
 async function get_pricing_bananait() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -359,7 +359,7 @@ async function get_pricing_bananait() {
 
 async function get_pricing_csc() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -419,7 +419,7 @@ async function get_pricing_csc() {
 
 async function get_pricing_istudiobyspvi() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -462,7 +462,7 @@ async function get_pricing_istudiobyspvi() {
 
 async function get_pricing_istudiobycopperwired() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -536,7 +536,7 @@ async function get_pricing_istudiobycopperwired() {
 
 async function get_pricing_jaymart() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
@@ -637,7 +637,7 @@ async function get_pricing_jaymart() {
 
 async function get_pricing_tg() {
   const executablePath =
-    (await chromium.executablePath) || LOCAL_CHROME_EXECUTABLE;
+    (await chromium.executablePath()) || LOCAL_CHROME_EXECUTABLE;
   const browser = await puppeteer.launch({
     executablePath,
     args: chromium.args,
